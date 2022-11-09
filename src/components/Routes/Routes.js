@@ -37,7 +37,7 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/tourServices/${params.id}`)
             },
             {
-                path:'packageReview/:id',
+                path:'/packageReview',
                 element:<PackageReview></PackageReview>
             }
         ]
