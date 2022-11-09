@@ -21,7 +21,7 @@ const Home = () => {
         <div className='text-center py-10'>
           <Link to='/myPhoto'><button className="btn btn-success w-80   ">See All</button></Link>
         </div>
-       </div>
+      </div>
     );
 };
 

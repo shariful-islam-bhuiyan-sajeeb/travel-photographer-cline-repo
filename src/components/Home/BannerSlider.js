@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { FaBeer} from 'react-icons/fa';
 import { HiArrowRight } from "react-icons/hi2";
+import { Link } from 'react-router-dom';
 
 
 
 const BannerSlider = ({travel}) => {
-   const {category,img,name,description,price,rating}=travel;
+    const { category, img, name,_id, description, price, ratings}=travel;
    console.log(travel);
 
     // const [services,setCervices] = useState([])
@@ -27,9 +28,14 @@ const BannerSlider = ({travel}) => {
                     </div>
                     <p className="dark:text-gray-100 mb-5">{description.slice(0, 50)}</p>
 
-                    <button className="btn btn-primary w-full hover:bg--600">Details</button>
-                    <HiArrowRight></HiArrowRight>
-                    
+                   <div className='flex justify-between pl-4 mr-2 font-bold '> 
+                        <div className='text-xl'>
+                            <p>Rating: {ratings}</p>
+                        </div>
+                        <div className='text-2xl hover:text-green-600 px-2'>
+                            <Link to={`/detailsCard/${_id}`}> <HiArrowRight></HiArrowRight></Link>
+                        </div>
+                   </div>
                 </div>
             </div>
             

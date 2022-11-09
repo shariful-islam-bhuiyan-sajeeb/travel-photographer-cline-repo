@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import DetailsCard from "../Home/DetailsCard/DetailsCard";
 import Home from "../Home/Home";
 import MyPhoto from "../Home/MyPhoto/MyPhoto";
 import Main from "../Layout/Main";
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
             {
                 path:'/register',
                 element: <Register></Register>
+            },
+            {
+                path:'/detailsCard/:id',
+                element:<DetailsCard></DetailsCard>,
+                loader: ({ params }) => fetch(`http://localhost:5000/tourServices/${params.id}`)
             }
         ]
     }
