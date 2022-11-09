@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className="navbar h-11 mb-12 pt-12 bg-base-100 shadow-xl">
+        <div className="navbar h-8 mb-12 pt-8 bg-base-100 sticky top-0  shadow-xl">
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
