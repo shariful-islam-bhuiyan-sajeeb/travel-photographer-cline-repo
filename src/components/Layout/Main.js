@@ -5,7 +5,7 @@ import Header from '../Pages/Header/Header';
 
 const Main = () => {
     return (
-        <div>
+        <div className=''>
             <Header></Header>
             <Outlet></Outlet>
             
