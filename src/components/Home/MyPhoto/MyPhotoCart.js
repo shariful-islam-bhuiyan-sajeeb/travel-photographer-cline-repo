@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { HiArrowLeft } from "react-icons/hi2";
 
 const MyPhotoCart = ({allPhoto}) => {
-    const {img,name,category,description}=allPhoto;
+    const {_id,img,name,category,description}=allPhoto;
 
     return (
         <div>
@@ -16,8 +16,10 @@ const MyPhotoCart = ({allPhoto}) => {
                     </div>
                     <p className="dark:text-gray-100 mb-5">{description.slice(0,60)}</p>
 
-                    <div className='text-2xl ml-6'>
-                        <Link to='/'> <HiArrowLeft></HiArrowLeft> </Link>
+                    <div className='text-2xl ml-6 flex justify-between px-0'>
+                        <Link to='/'><button className="btn btn-outline  btn-success">Backspace</button></Link>
+                        <Link to={`/detailsCard/${_id}`}><button className="btn btn-outline btn-success">Review</button></Link>
+                        
                     </div>
                 </div>
 
