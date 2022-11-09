@@ -1,12 +1,14 @@
 import { Result } from 'postcss';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import img from '../../../assets/images/login.jpg';
 import { AuthContext } from '../../../Contexts/AuthProviders';
 
 
 const Login = () => {
     const { login }=useContext(AuthContext)
+
+    const navigate = useNavigate();
 
     const handleLogin = event =>{
         event.preventDefault();
@@ -19,6 +21,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             form.reset();
+            navigate('/')
         })
     }
    

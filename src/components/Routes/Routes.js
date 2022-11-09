@@ -6,6 +6,7 @@ import Main from "../Layout/Main";
 import PackageReview from "../PackageReview/PackageReview";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<Home></Home>,
+                element: <PrivateRoutes><Home></Home></PrivateRoutes>,
                 loader: () => fetch('http://localhost:5000/tourServices')
             },
             {

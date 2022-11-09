@@ -4,13 +4,21 @@ import { AuthContext } from '../../../Contexts/AuthProviders';
 
 
 const Header = () => {
- const {user, logOut}=useContext(AuthContext)
+    const { user, logOut, signInWithGoogle }=useContext(AuthContext)
 
 
     const handleLogout =()=>{
         logOut()
         .then()
         .catch()
+    }
+    const handleGoogleSignIn =()=>{
+        signInWithGoogle()
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(err => console.error(err))
     }
 
     return (
@@ -54,9 +62,13 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to='/register'> <button className="btn btn-outline btn-success">Registration</button></Link>
-                    <Link to='login'> <button className="btn btn-outline btn-success">Google</button></Link>
-                    
+                   { 
+                     user?.email?
+                     <Link to='/register'> <button className="btn btn-outline btn-success">Registration</button></Link>
+                     :
+                    <Link to='login'> <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success">Google</button></Link>
+
+                   }
                     
                 </div>
             </div>
