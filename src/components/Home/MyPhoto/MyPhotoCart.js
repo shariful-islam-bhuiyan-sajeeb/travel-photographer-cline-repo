@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { HiArrowLeft } from "react-icons/hi2";
 
 const MyPhotoCart = ({allPhoto}) => {
     const {img,name,category,description}=allPhoto;
@@ -13,7 +15,13 @@ const MyPhotoCart = ({allPhoto}) => {
                         <h2 className="text-xl font-semibold tracking-wide">Category:{category.slice(0,60)}</h2>
                     </div>
                     <p className="dark:text-gray-100 mb-5">{description.slice(0,60)}</p>
+
+                    <div className='text-2xl ml-6'>
+                        <Link to='/'> <HiArrowLeft></HiArrowLeft> </Link>
+                    </div>
                 </div>
+
+                
             </div>
         </div>
     );

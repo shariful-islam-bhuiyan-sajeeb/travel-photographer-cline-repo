@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import { HiArrowLeft, HiArrowRight } from "react-icons/hi2";
+import { HiArrowLeft} from "react-icons/hi2";
 
 const DetailsCard = () => {
     const {category,day,description,img,name,price,ratings,ratingsCount} = useLoaderData();
@@ -15,10 +15,13 @@ const DetailsCard = () => {
                     <h2>Package Rate: <span className='text-orange-600 text-lg'>{price}</span></h2>
                 </div>
                 <p className="dark:text-gray-100 mb-5">{description}</p>
-
                 <div className='text-2xl ml-6'>
-                    <Link to='/home'> <HiArrowLeft></HiArrowLeft> </Link>
+                    <Link to='/'> <HiArrowLeft></HiArrowLeft> </Link>
                 </div>
+            </div>
+            <div>
+
+
             </div>
             
         </div>

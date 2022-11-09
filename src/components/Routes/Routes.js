@@ -3,6 +3,7 @@ import DetailsCard from "../Home/DetailsCard/DetailsCard";
 import Home from "../Home/Home";
 import MyPhoto from "../Home/MyPhoto/MyPhoto";
 import Main from "../Layout/Main";
+import PackageReview from "../PackageReview/PackageReview";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
                 path:'/detailsCard/:id',
                 element:<DetailsCard></DetailsCard>,
                 loader: ({ params }) => fetch(`http://localhost:5000/tourServices/${params.id}`)
+            },
+            {
+                path:'packageReview/:id',
+                element:<PackageReview></PackageReview>
             }
         ]
     }
