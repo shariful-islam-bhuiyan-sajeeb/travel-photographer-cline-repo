@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const BannerSlider = ({travel}) => {
     const { category, img, name,_id, description, price, ratings}=travel;
-   console.log(travel);
+
 
     // const [services,setCervices] = useState([])
     // useEffect(()=>{

@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/AuthProviders';
 
-const PrivateRoutes = () => {
+const PrivateRoutes = ({children}) => {
+    const {user,loading} = useContext(AuthContext)
+    const location = useLocation();
+    if(loading){
+        return <h1 className='text-5xl'> Loading...</h1>
+    }
+
+    if(user){
+        return children
+    }
+
     return (
-        <div>
-            <h2>This is Private Route page.</h2>
-        </div>
+       <Navigate to='/login' state={{from: location}} replace></Navigate>
     );
 };
 

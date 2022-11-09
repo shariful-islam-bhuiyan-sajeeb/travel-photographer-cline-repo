@@ -44,7 +44,7 @@ const DetailsCard = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+               
                 if (data.acknowledged) {
                     alert('Your Review successfully')
                     form.reset();

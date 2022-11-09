@@ -5,6 +5,7 @@ import { AuthContext } from '../../../Contexts/AuthProviders';
 
 
 const Register = () => {
+
     const {createUser}=useContext(AuthContext)
     console.log();
 
@@ -20,9 +21,12 @@ const Register = () => {
            .then(result => {
                const user = result.user;
                console.log(user);
+               form.reset();
            })
            .catch(err => console.error(err));
     }
+
+
     return (
         <div className="hero w-full my-20 pb-10">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">

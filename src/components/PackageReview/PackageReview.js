@@ -7,12 +7,29 @@ const PackageReview = () => {
     const {user} = useContext(AuthContext)
     const [reviews , setReviews]= useState([])
 
-
     useEffect(()=>{
         fetch(`http://localhost:5000/review?email=${user?.email}`)
         .then(res =>res.json())
         .then(data => setReviews(data))
     },[user?.email])
+
+         
+    const handleRemove = id => {
+        const proceed = window.confirm('Are you sure, you want to cancel this reviews.')
+        if (proceed) {
+            fetch(`http://localhost:5000/review/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        alert('deleted successfully');
+                        const remaining = reviews.filter(review => review._id !== id);
+                        setReviews(remaining);
+                    }
+                })
+        };
+    };
 
     return (
 
@@ -33,6 +50,7 @@ const PackageReview = () => {
                             reviews.map(review => <ReviewesTable
                                 key={review._id}
                                 review={review}
+                                handleRemove={handleRemove}
                             ></ReviewesTable>)
                         }
                     </tbody>
