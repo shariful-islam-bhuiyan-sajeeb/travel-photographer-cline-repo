@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProviders';
+import header from '../../Home/images/photography-logo-png-logo-png-2.png'
 
 
 const Header = () => {
@@ -12,14 +13,7 @@ const Header = () => {
         .then()
         .catch()
     }
-    const handleGoogleSignIn =()=>{
-        signInWithGoogle()
-        .then(result =>{
-            const user = result.user;
-            console.log(user);
-        })
-        .catch(err => console.error(err))
-    }
+    
 
     return (
         <div className="navbar h-8 mb-12 pt-8 bg-base-100 sticky top-0  shadow-xl">
@@ -31,29 +25,34 @@ const Header = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             <li className='font-semibold'><Link to='/'>Home</Link></li>
+                            <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
                             {
                                 user?.email ?
                                     <>
                                         <li className='font-semibold'><Link to='/MyPhoto'>Photo Services</Link></li>
                                         <li className='font-semibold'><Link to='/packageReview'> <button>Review</button> </Link></li>
-                                        <li className='font-semibold'><Link> <button>Logout</button> </Link></li>
+                                        <li className='font-semibold'><Link to='/login'> <button>Logout</button> </Link></li>
                                     </> :
                                     <li className='font-semibold'><Link to='/login'>Login</Link></li>
 
                             }
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case font-semibold text-xl">Our Tours & Travel Guidelines</Link>
+                    <div className='flex items-center'>
+                        <img className='w-20' src={header} alt="header" />
+                        <Link to='/about' className="  btn btn-ghost normal-case font-semibold text-3xl text-green-600">Travel Photography </Link>
+                    </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
                         <li className='font-semibold'><Link to='/'>Home</Link></li>
+                        <li className='font-semibold'><Link to='/blog'>Blog</Link></li>
                         {
                             user?.email?
                             <>
                                     <li className='font-semibold'><Link to='/MyPhoto'>Photo Services</Link></li>                                  
                                     <li className='font-semibold'><Link to='/packageReview'> <button>Review</button> </Link></li>
-                                    <li className='font-semibold'><Link> <button onClick={handleLogout}>Logout</button> </Link></li>
+                                    <li className='font-semibold'><Link to='/login'> <button onClick={handleLogout}>Logout</button> </Link></li>
                             </> :
                                 <li className='font-semibold'><Link to='/login'>Login</Link></li>
 
@@ -61,16 +60,10 @@ const Header = () => {
                        
                     </ul>
                 </div>
-                <div className="navbar-end">
-                   { 
-                     user?.email?
+                {/* <div className="navbar-end">
                      <Link to='/register'> <button className="btn btn-outline btn-success">Registration</button></Link>
-                     :
-                    <Link to='login'> <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success">Google</button></Link>
-
-                   }
                     
-                </div>
+                </div> */}
             </div>
         </div>
     );

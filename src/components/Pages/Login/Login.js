@@ -1,12 +1,15 @@
 import { Result } from 'postcss';
 import React, { useContext } from 'react';
+import { FaGoogle } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import img from '../../../assets/images/login.jpg';
 import { AuthContext } from '../../../Contexts/AuthProviders';
+import { IconName } from "react-icons/hi2";
+
 
 
 const Login = () => {
-    const { login }=useContext(AuthContext)
+    const { login, signInWithGoogle }=useContext(AuthContext)
 
     const navigate = useNavigate();
 
@@ -19,12 +22,39 @@ const Login = () => {
         login(email, password)
         .then(result =>{
             const user = result.user;
-            console.log(user);
+           const currentUser ={
+            email: user.email
+           }
+           console.log(currentUser);
             form.reset();
-            navigate('/')
-        })
+
+            fetch('http://localhost:5000/jwt',{
+                method: 'POST',
+                headers:{
+                    'content-type': 'application/json'
+                },
+                body:JSON.stringify(currentUser)
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                localStorage.setItem('travelToken', data.token);
+
+            })
+            // navigate('/')
+        }).catch(err =>console.error(err));
     }
    
+
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(err => console.error(err))
+    }
    
 
 
@@ -53,11 +83,15 @@ const Login = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Login" />
+
+                        <div className="form-control mt-4">
+                            <input className="btn btn-primary pb-2" type="submit" value="Login" /> <br />
+                            <span className='text-center text-2xl font-semibold mb-4'><h2>Or</h2></span>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success w-full"> <span className='mr-2  '> <FaGoogle></FaGoogle>  </span> Sign Up with Google</button>
+
                         </div>
                     </form>
-                    <p className='text-center'>New to Registration <Link className='text-orange-600 font-bold' to="/register">Registration</Link> </p>
+                    <p className='text-center'>New to  Sign in <Link className='text-orange-600 font-bold' to="/register"> Sign in</Link> </p>
                 </div>
             </div>
         </div>

@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import Aboute from "../Blog/Aboute";
+import Blog from "../Blog/Blog";
 import DetailsCard from "../Home/DetailsCard/DetailsCard";
 import Home from "../Home/Home";
 import MyPhoto from "../Home/MyPhoto/MyPhoto";
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
             {
                 path:'/packageReview',
                 element:<PackageReview></PackageReview>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>
+            },
+            {
+                path:'/about',
+                element:<Aboute></Aboute>
             }
         ]
     }
