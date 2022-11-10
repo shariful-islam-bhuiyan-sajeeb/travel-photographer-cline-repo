@@ -1,6 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProviders';
+
 import ReviewesTable from './ReviewesTable';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
 
 
 const PackageReview = () => {
@@ -31,7 +37,7 @@ const PackageReview = () => {
 
         /* Remove handle codes*/ 
     const handleRemove = id => {
-        const proceed = window.confirm('Are you sure, you want to cancel this reviews.')
+        const proceed = toast('Are you sure, you want to cancel this reviews.')
         if (proceed) {
             fetch(`https://assignment-11-server-projects.vercel.app/review/${id}`, {
                 method: 'DELETE'
@@ -39,7 +45,7 @@ const PackageReview = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        alert('deleted successfully');
+                        toast('deleted successfully');
                         const remaining = reviews.filter(review => review._id !== id);
                         setReviews(remaining);
                     }
@@ -50,19 +56,10 @@ const PackageReview = () => {
     return (
 
        <div>
-            {/* <h2 className='text-center lg:text-2xl md:text-lg font-bold mb-4'>Total Number of reviews: <span className='text-2xl text-orange-600'> {reviews.length} </span></h2> */}
+            <h2 className='text-center lg:text-2xl md:text-lg font-bold mb-4'>Total Number of reviews: <span className='text-2xl text-orange-600'> {reviews.length} </span></h2>
             <div className="">
                 <table className="table w-10/12 mx-auto ">
-                    <thead className=''>
-                        <div className=''>
-                            <ul className='flex justify-between p-5 px-8  bg-zinc-200 '>
-                                <li>Photo</li>
-                                <li>Name</li>
-                                <li>Package</li>
-                                <li>Remove</li>
-                               </ul>
-                        </div>
-                    </thead>
+                    
                     <tbody className=' bg-zinc-200'>
                         {
                             reviews.map(review => <ReviewesTable
@@ -74,8 +71,11 @@ const PackageReview = () => {
                     </tbody>
                 </table>
             </div>
+            <ToastContainer/>
        </div>
+
     );
 };
 
 export default PackageReview;
+

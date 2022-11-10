@@ -31,8 +31,6 @@ const MyPhotoCart = ({allPhoto}) => {
                         
                     </div>
                 </div>
-
-                
             </div>
         </div>
     );
