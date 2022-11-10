@@ -40,7 +40,7 @@ const Header = () => {
                     </div>
                     <div className='flex items-center'>
                         <img className='w-20' src={header} alt="header" />
-                        <Link to='/about' className="  btn btn-ghost normal-case font-semibold text-3xl text-green-600">Travel Photography </Link>
+                        <Link to='/about' className="  btn btn-ghost normal-case font-semibold text-3xl text-green-600">Travel Photographer </Link>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">

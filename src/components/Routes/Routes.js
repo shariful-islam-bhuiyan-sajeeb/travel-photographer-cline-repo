@@ -50,7 +50,8 @@ const router = createBrowserRouter([
             {
                 path:'/about',
                 element:<Aboute></Aboute>
-            }
+            },
+           
         ]
     }
 ]);
