@@ -29,7 +29,7 @@ const Login = () => {
            console.log(currentUser);
             form.reset();
 
-            fetch('http://localhost:5000/jwt',{
+            fetch('https://assignment-11-server-projects.vercel.app/jwt',{
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'

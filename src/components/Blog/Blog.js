@@ -13,7 +13,7 @@ const Blog = () => {
                         <img src={javaScrip} alt="" className="h-80 lg:w-80 md:w-full py-2 px-2 bg-emerald-400 aspect-video" />
                         <div className="flex flex-col justify-center flex-1 p-6 bg-emerald-400">
                             <span className="text-3xl text-white">What is the difference between javascript and NodeJS?</span>
-                            <h3 className="text-lg text-black">1-NodeJS is a cross-platform and opensource Javascript runtime environment that allows the javascript to be run on the server-side.Nodejs allows Javascript code to run outside the browser.Nodejs comes with a lot of modules and mostly used in web development. 2-Javascript is a Scripting language.It is mostly abbreviated as JS.It can be said that Javascript is the updated version of the ECMA script. </h3>
+                            <h3 className=" lg:text-lg md:text-sm text-black">1-NodeJS is a cross-platform and opensource Javascript runtime environment that allows the javascript to be run on the server-side.Nodejs allows Javascript code to run outside the browser.Nodejs comes with a lot of modules and mostly used in web development. 2-Javascript is a Scripting language.It is mostly abbreviated as JS.It can be said that Javascript is the updated version of the ECMA script. </h3>
 
                         </div>
                     </div>

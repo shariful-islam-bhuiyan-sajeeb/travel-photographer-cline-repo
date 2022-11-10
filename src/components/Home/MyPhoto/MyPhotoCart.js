@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { HiArrowLeft } from "react-icons/hi2";
+
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+
 
 const MyPhotoCart = ({allPhoto}) => {
     const {_id,img,name,category,description}=allPhoto;
@@ -9,7 +12,13 @@ const MyPhotoCart = ({allPhoto}) => {
         <div>
             <div className='  w-full mx-auto'>
                 <div className="max-w-xs  p-6 rounded-md shadow-md bg-slate-700 dark:text-gray-50">
-                    <img src={img} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
+                    
+                    <PhotoProvider>
+                        <PhotoView src={img}>
+                            <img src={img} alt="" className="object-cover object-center w-full rounded-md h-72 dark:bg-gray-500" />
+                        </PhotoView>
+                    </PhotoProvider>
+
                     <div className="mt-6 mb-2">
                         <span className="block text-base font-medium tracking-widest uppercase text-white">Name:{name}</span>
                         <h2 className="text-xl font-semibold tracking-wide">Category:{category.slice(0,60)}</h2>

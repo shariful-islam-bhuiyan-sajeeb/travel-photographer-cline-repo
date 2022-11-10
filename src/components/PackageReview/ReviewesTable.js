@@ -7,12 +7,11 @@ const ReviewesTable = ({ review, handleRemove }) => {
 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/tourServices/${service}`)
+        fetch(`https://assignment-11-server-projects.vercel.app/tourServices/${service}`)
         .then(res => res.json())
         .then(data => setReviewService(data))
     },[service])
 
-    
 
     return (
             <tr>

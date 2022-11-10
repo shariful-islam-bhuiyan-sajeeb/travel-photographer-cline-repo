@@ -19,12 +19,12 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element: <PrivateRoutes><Home></Home></PrivateRoutes>,
-                loader: () => fetch('http://localhost:5000/tourServices')
+                loader: () => fetch('https://assignment-11-server-projects.vercel.app/tourServices')
             },
             {
                 path:'/MyPhoto',
                 element: <MyPhoto></MyPhoto>,
-                loader: () => fetch('http://localhost:5000/tourAllCard')
+                loader: () => fetch('https://assignment-11-server-projects.vercel.app/tourAllCard')
             },
             {
                path:'/login',
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path:'/detailsCard/:id',
                 element:<DetailsCard></DetailsCard>,
-                loader: ({ params }) => fetch(`http://localhost:5000/tourServices/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-11-server-projects.vercel.app/tourServices/${params.id}`)
             },
             {
                 path:'/packageReview',
