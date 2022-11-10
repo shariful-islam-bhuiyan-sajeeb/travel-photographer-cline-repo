@@ -12,6 +12,7 @@ const Login = () => {
     const { login, signInWithGoogle }=useContext(AuthContext)
 
     const navigate = useNavigate();
+    
 
     const handleLogin = event =>{
         event.preventDefault();
@@ -38,10 +39,11 @@ const Login = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                localStorage.setItem('travelToken', data.token);
+                localStorage.setItem('travel-Token',data.token);
 
+                navigate('/packageReview');
             })
-            // navigate('/')
+            
         }).catch(err =>console.error(err));
     }
    
