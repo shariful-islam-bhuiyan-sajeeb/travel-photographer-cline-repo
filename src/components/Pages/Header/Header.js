@@ -5,7 +5,7 @@ import header from '../../Home/images/photography-logo-png-logo-png-2.png'
 
 
 const Header = () => {
-    const { user, logOut, signInWithGoogle }=useContext(AuthContext)
+    const { user, logOut }=useContext(AuthContext)
 
 
     const handleLogout =()=>{
@@ -40,7 +40,7 @@ const Header = () => {
                     </div>
                     <div className='flex items-center'>
                         <img className='w-20' src={header} alt="header" />
-                        <Link to='/about' className="  btn btn-ghost normal-case font-semibold text-3xl text-green-600">Travel Photographer </Link>
+                        <Link to='/about' className="  btn btn-ghost lg:w-full md:w-20 normal-case font-semibold sm:text-lg  md:text-xl xl:tex-3xl px-4 text-green-600">Travel Photographer </Link>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">

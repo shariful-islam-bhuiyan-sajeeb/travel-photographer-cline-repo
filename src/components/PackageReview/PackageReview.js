@@ -23,7 +23,7 @@ const PackageReview = () => {
         .then(data => setReviews(data))
     },[user?.email,logOut])
 
-         
+        /* Remove handle codes*/ 
     const handleRemove = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this reviews.')
         if (proceed) {
@@ -44,15 +44,17 @@ const PackageReview = () => {
     return (
 
        <div>
-        <h2>this is reviews {reviews.length}</h2>
-            <div className="  w-full">
-                <table className="table w-4/6 mx-auto ">
+            <h2 className='text-center lg:text-2xl md:text-lg font-bold mb-4'>Total Number of reviews: <span className='text-2xl text-orange-600'> {reviews.length} </span></h2>
+            <div className="">
+                <table className="table w-10/12 mx-auto ">
                     <thead className=''>
-                        <div className='flex  justify-between p-5 px-8  bg-zinc-200 '>
-                                <div>Photo</div>
-                                <div>Name</div>
-                                <div>Package</div>
-                                <div>delete</div>
+                        <div className=''>
+                            <ul className='flex justify-between p-5 px-8  bg-zinc-200 '>
+                                <li>Photo</li>
+                                <li>Name</li>
+                                <li>Package</li>
+                                <li>Remove</li>
+                               </ul>
                         </div>
                     </thead>
                     <tbody className=' bg-zinc-200'>

@@ -39,9 +39,9 @@ const Login = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                localStorage.setItem('travel-Token',data.token);
+                localStorage.setItem('travel-Token', data.token);
 
-                navigate('/packageReview');
+                navigate('/');
             })
             
         }).catch(err =>console.error(err));
@@ -87,7 +87,7 @@ const Login = () => {
                         </div>
 
                         <div className="form-control mt-4">
-                            <input className="btn btn-primary pb-2" type="submit" value="Login" /> <br />
+                            <input className="btn btn-primary " type="submit" value="Login" /> <br />
                             <span className='text-center text-2xl font-semibold mb-4'><h2>Or</h2></span>
                             <button onClick={handleGoogleSignIn} className="btn btn-outline btn-success w-full"> <span className='mr-2  '> <FaGoogle></FaGoogle>  </span> Sign Up with Google</button>
 
