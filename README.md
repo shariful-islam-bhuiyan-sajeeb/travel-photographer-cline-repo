@@ -5,7 +5,7 @@
 # . mamba
 # . daisy ui 
 # . firebase authentication
-# . live link : https://tours-and-travels-93d9e.web.app 
+# . live link : https://tours-and-travels-93d9e.web.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
