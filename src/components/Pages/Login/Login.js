@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProviders";
@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 const Login = () => {
   const { login, signInWithGoogle } = useContext(AuthContext);
+  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
@@ -34,13 +35,13 @@ const Login = () => {
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
+            toast.success("Login is Successfully,Thank you.");
             localStorage.setItem("travel-Token", data.token);
             form.reset();
-
             navigate("/");
           });
       })
-      .catch((err) => console.error(err));
+      .catch((err) => setError(err.message));
   };
 
   const handleGoogleSignIn = () => {
@@ -94,6 +95,7 @@ const Login = () => {
                   Forgot password?
                 </a>
               </label>
+              {error && <p className="text-sm text-red-700">{error}</p>}
             </div>
 
             <div className="form-control mt-4">

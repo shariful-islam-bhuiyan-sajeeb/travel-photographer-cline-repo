@@ -21,11 +21,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <PrivateRoutes>
-            <Home></Home>
-          </PrivateRoutes>
-        ),
+        element: <Home></Home>,
         loader: () =>
           fetch(
             "https://assignment-11-server-projects.vercel.app/tourServices"
@@ -47,7 +43,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/detailsCard/:id",
-        element: <DetailsCard></DetailsCard>,
+        element: (
+          <PrivateRoutes>
+            <DetailsCard></DetailsCard>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://assignment-11-server-projects.vercel.app/tourServices/${params.id}`

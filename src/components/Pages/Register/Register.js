@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import img from "../../../assets/images/register.jpg";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProviders";
 import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -21,6 +21,7 @@ const Register = () => {
         console.log(user);
         form.reset();
         toast.success("Registration successfully, Thank you");
+        navigate("/login");
       })
       .catch((err) => console.error(err));
   };
