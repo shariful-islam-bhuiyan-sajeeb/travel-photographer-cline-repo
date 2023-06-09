@@ -2,7 +2,7 @@ import React from "react";
 
 const WhatsApp = () => {
   return (
-    <div className=" flex justify-end pr-4 w-full sticky bottom-10 pb-6 ">
+    <div className=" flex justify-end pr-4 w-full sticky bottom-10 ">
       <a
         className=""
         href="https://wa.me/01791514345?text=Hi..."

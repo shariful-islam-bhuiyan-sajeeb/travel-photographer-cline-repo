@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  console.log();
 
   const handleRegister = (event) => {
     event.preventDefault();

@@ -4,7 +4,7 @@ import { HiEnvelope, HiMap, IconName } from "react-icons/hi2";
 
 const Map = () => {
   return (
-    <div className="xl:my-6  my-4">
+    <div className="mt-4">
       <div>
         <h2 className="text-green-600 lg:my-6 md:my-4 my-2 xl:text-4xl  md:text-2xl text-xl text-center font-serif font-semibold">
           Contact us
