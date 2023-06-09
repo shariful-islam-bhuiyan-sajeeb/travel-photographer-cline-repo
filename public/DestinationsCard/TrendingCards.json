@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/N9MPwYT/99cea01bf7c05b5847d6971da8628e5d.jpg",
+    "button": "Beauty",
+    "title": "visual Elements - Basic Things That Can Be Seen",
+    "date": "january 02, 2022",
+    "authorImg": "https://i.ibb.co/9vm6Rx4/Joseph-Gray.png",
+    "authorName": "Afaty Poprita"
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/crKJKKB/lifestyle.jpg",
+    "button": "Travel",
+    "title": "visual Elements - Basic Things That Can Be Seen",
+    "date": "january 02, 2022",
+    "authorImg": "https://i.ibb.co/9vm6Rx4/Joseph-Gray.png",
+    "authorName": "Afaty Poprita"
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/6s6StLn/healthy-lifestyle-family-sport-athletic-young-women-her-daughter-running-background-urban-landscape.jpg",
+    "button": "Travel",
+    "title": "visual Elements - Basic Things That Can Be Seen",
+    "date": "january 02, 2022",
+    "authorImg": "https://i.ibb.co/9vm6Rx4/Joseph-Gray.png",
+    "authorName": "Afaty Poprita"
+  }
+]

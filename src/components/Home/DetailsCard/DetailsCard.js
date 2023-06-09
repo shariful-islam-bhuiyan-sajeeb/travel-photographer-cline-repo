@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { HiArrowLeft} from "react-icons/hi2";
 import { AuthContext } from '../../../Contexts/AuthProviders';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const DetailsCard = () => {
     const {user}=useContext(AuthContext)
+   
 
     const { _id,category,day,description,img,name,price,ratings,ratingsCount} = useLoaderData();
 
@@ -46,7 +47,7 @@ const DetailsCard = () => {
             .then(data => {
                
                 if (data.acknowledged) {
-                    alert('Your Review successfully')
+                    toast.success('Your Review successfully')
                     form.reset();
                 }
             })
@@ -93,6 +94,7 @@ const DetailsCard = () => {
             <div className='flex justify-center text-center py-10'>
                 <Link to='/'><button className=" flex items-center btn btn-success w-80 "> <HiArrowLeft /> Backspace</button></Link>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

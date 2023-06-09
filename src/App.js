@@ -1,14 +1,14 @@
+import { RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import { RouterProvider } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-
-import router from './components/Routes/Routes';
-
+import router from "./components/Routes/Routes";
 
 function App() {
   return (
-    <div data-theme="light" className=" w-5/6 mx-auto">
-     <RouterProvider router={router} />
+    <div data-theme="light" className="max-w-[2041px] mx-auto">
+      <RouterProvider router={router} />
     </div>
   );
 }

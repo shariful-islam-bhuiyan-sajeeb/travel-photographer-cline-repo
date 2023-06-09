@@ -9,44 +9,44 @@ import { IconName } from "react-icons/hi2";
 
 
 const Login = () => {
-    const { login, signInWithGoogle }=useContext(AuthContext)
+    const { login, signInWithGoogle } = useContext(AuthContext)
 
     const navigate = useNavigate();
-    
 
-    const handleLogin = event =>{
+
+    const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
 
         login(email, password)
-        .then(result =>{
-            const user = result.user;
-           const currentUser ={
-            email: user.email
-           }
-           console.log(currentUser);
-            form.reset();
+            .then(result => {
+                const user = result.user;
+                const currentUser = {
+                    email: user.email
+                }
+                console.log(currentUser);
+                form.reset();
 
-            fetch('https://assignment-11-server-projects.vercel.app/jwt',{
-                method: 'POST',
-                headers:{
-                    'content-type': 'application/json'
-                },
-                body:JSON.stringify(currentUser)
-            })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                localStorage.setItem('travel-Token', data.token);
+                fetch('https://assignment-11-server-projects.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        localStorage.setItem('travel-Token', data.token);
 
-                navigate('/');
-            })
-            
-        }).catch(err =>console.error(err));
+                        navigate('/');
+                    })
+
+            }).catch(err => console.error(err));
     }
-   
+
 
 
     const handleGoogleSignIn = () => {
@@ -57,7 +57,7 @@ const Login = () => {
             })
             .catch(err => console.error(err))
     }
-   
+
 
 
 
@@ -65,11 +65,11 @@ const Login = () => {
         <div className="hero w-full h-full my-20">
             <div className="hero-content grid gap-20 md:grid-cols-2 flex-col lg:flex-row">
                 <div className="text-center lg:text-left">
-                    <img className='w-3/4' src={img}  alt="" />
+                    <img className='w-3/4' src={img} alt="" />
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20">
                     <h1 className="text-5xl text-center font-bold">Login</h1>
-                    <form onSubmit={handleLogin}  className="card-body">
+                    <form onSubmit={handleLogin} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>

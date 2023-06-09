@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Kathmandu",
+    "package": "31 packages",
+    "price": "BDT 4,400",
+    "img": "https://cdn-tbbd-flight.sharetrip.net/city/medium/-LFpzQ9nWe0eTEeRCT9bicMvZ1oYw46c.png"
+  },
+  {
+    "id": 2,
+    "title": "Cairo",
+    "package": "7 packages",
+    "price": "BDT 23,650",
+    "img": "https://cdn-tbbd-flight.sharetrip.net/city/medium/SrAIwJH1bPuRGixft5el4Hb2o5tn1edH.png"
+  },
+  {
+    "id": 3,
+    "title": "Kathmandu",
+    "package": "66 packages",
+    "price": "BDT 4,650",
+    "img": "https://cdn-tbbd-flight.sharetrip.net/city/medium/RaafNbuA0LgrY7E0Dt9ONWfKs3GA2TT_.png"
+  },
+  {
+    "id": 4,
+    "title": "Agra",
+    "package": "9 packages",
+    "price": "BDT 16,280",
+    "img": "https://cdn-tbbd-flight.sharetrip.net/city/medium/8S8vBSNj5bC66cS127QcpEzm5VhFnQcZ.png"
+  },
+  {
+    "id": 5,
+    "title": "Istanbul",
+    "package": "21 packages",
+    "price": "BDT 7,700",
+    "img": "https://cdn-tbbd-flight.sharetrip.net/city/medium/byUo64_yxPnpZSbYCldZhLSRTvJGXqQU.png"
+  },
+  {
+    "id": 6,
+    "title": "Dubai",
+    "package": "22 packages",
+    "price": "BDT 10,500",
+    "img": "https://cdn-tbbd-flight.sharetrip.net/city/medium/irrWfyw8QpLqoAWlF7_qId-Cyz-mE370.png"
+  },
+  {
+    "id": 7,
+    "title": "Cox's Bazar",
+    "package": "0 packages",
+    "price": "BDT 00",
+    "img": "https://cdn-tbbd-flight.sharetrip.net/city/medium/cJooJV4d10Rla0ggdPIWYy6LnOl7ycqF.png"
+  },
+  {
+    "id": 8,
+    "title": "Colombo",
+    "package": "20 packages",
+    "price": "BDT 6,000",
+    "img": "https://cdn-tbbd-flight.sharetrip.net/city/medium/7gf4hDpWXVm2juIkND6-E8gHha05NrFj.png"
+  }
+]

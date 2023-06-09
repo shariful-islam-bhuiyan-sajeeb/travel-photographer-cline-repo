@@ -13,56 +13,68 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 
-
-
 const router = createBrowserRouter([
-    {
-        path:'/',
-        element:<Main></Main>,
-        errorElement:<ErrorPage></ErrorPage>,
-        children:[
-            {
-                path:'/',
-                element: <PrivateRoutes><Home></Home></PrivateRoutes>,
-                loader: () => fetch('https://assignment-11-server-projects.vercel.app/tourServices')
-            },
-            {
-                path:'/MyPhoto',
-                element: <MyPhoto></MyPhoto>,
-                loader: () => fetch('https://assignment-11-server-projects.vercel.app/tourAllCard')
-            },
-            {
-               path:'/login',
-               element:<Login></Login> 
-            },
-            {
-                path:'/register',
-                element: <Register></Register>
-            },
-            {
-                path:'/detailsCard/:id',
-                element:<DetailsCard></DetailsCard>,
-                loader: ({ params }) => fetch(`https://assignment-11-server-projects.vercel.app/tourServices/${params.id}`)
-            },
-            {
-                path:'/packageReview',
-                element:<PackageReview></PackageReview>
-            },
-            {
-                path:'/blog',
-                element:<Blog></Blog>
-            },
-            {
-                path:'/about',
-                element:<Aboute></Aboute>
-            },
-           {
-            path:'/update/:id',
-            element: <Update></Update>,
-               loader: async ({ params }) => fetch(`https://assignment-11-server-projects.vercel.app/reviewOne/${params.id}`)
-           }
-        ]
-    }
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        path: "/",
+        element: (
+          <PrivateRoutes>
+            <Home></Home>
+          </PrivateRoutes>
+        ),
+        loader: () =>
+          fetch(
+            "https://assignment-11-server-projects.vercel.app/tourServices"
+          ),
+      },
+      {
+        path: "/MyPhoto",
+        element: <MyPhoto></MyPhoto>,
+        loader: () =>
+          fetch("https://assignment-11-server-projects.vercel.app/tourAllCard"),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/detailsCard/:id",
+        element: <DetailsCard></DetailsCard>,
+        loader: ({ params }) =>
+          fetch(
+            `https://assignment-11-server-projects.vercel.app/tourServices/${params.id}`
+          ),
+      },
+      {
+        path: "/packageReview",
+        element: <PackageReview></PackageReview>,
+      },
+      {
+        path: "/blog",
+        element: <Blog></Blog>,
+      },
+      {
+        path: "/about",
+        element: <Aboute></Aboute>,
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: async ({ params }) =>
+          fetch(
+            `https://assignment-11-server-projects.vercel.app/reviewOne/${params.id}`
+          ),
+      },
+    ],
+  },
 ]);
 
 export default router;

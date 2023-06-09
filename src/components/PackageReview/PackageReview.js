@@ -45,7 +45,7 @@ const PackageReview = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        toast('deleted successfully');
+                        
                         const remaining = reviews.filter(review => review._id !== id);
                         setReviews(remaining);
                     }
