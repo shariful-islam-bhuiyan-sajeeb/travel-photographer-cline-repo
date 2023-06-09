@@ -1,10 +1,7 @@
-import { Result } from "postcss";
 import React, { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import img from "../../../assets/images/login.jpg";
 import { AuthContext } from "../../../Contexts/AuthProviders";
-import { IconName } from "react-icons/hi2";
 import { toast } from "react-toastify";
 
 const Login = () => {
