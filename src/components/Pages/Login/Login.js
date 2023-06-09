@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import img from "../../../assets/images/login.jpg";
 import { AuthContext } from "../../../Contexts/AuthProviders";
 import { IconName } from "react-icons/hi2";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { login, signInWithGoogle } = useContext(AuthContext);
@@ -50,6 +51,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        toast.success("Login is Successfully,Thank you.");
       })
       .catch((err) => console.error(err));
   };
