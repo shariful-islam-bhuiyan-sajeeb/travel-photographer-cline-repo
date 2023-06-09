@@ -60,15 +60,15 @@ const OfferCovid19 = () => {
                 src="https://q-xx.bstatic.com/xdata/images/xphoto/714x300/204490944.jpeg?k=f1dbbec42645c0ed1dc25f1e0878ab449b461baf936dcd971ad8c63bf13d0dc6&o="
                 alt=""
               />
-              <div className=" absolute xl:top-8 lg:top-4 md:top-6  top-2 left-4 text-white xl:w-1/2 lg:w-9/12  text-left">
+              <div className=" absolute xl:top-2 lg:top-4 md:top-6  top-2 left-4 text-white xl:w-1/2 lg:w-9/12  text-left">
                 <h2 className="font-serif font-semibold xl:text-xl md:text-lg sm:text-md text-sm">
                   The great getaway, your way
                 </h2>
-                <p className="text-md hidden sm:flex">
+                <p className="text-md hidden sm:flex p-0">
                   Save at least 15% on stays worldwide, from relaxing retreats
                   to off-grid adventures
                 </p>
-                <button className=" lg:px-5 md:px-4 px-2 md:py-2 py-1 md:mt-4 mt-2 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition-all duration-500">
+                <button className=" lg:px-5 md:px-4 px-2 md:py-2 py-1  mt-2 rounded-lg bg-blue-600 text-white hover:bg-blue-500 transition-all duration-500">
                   Find Getaway Deals
                 </button>
               </div>

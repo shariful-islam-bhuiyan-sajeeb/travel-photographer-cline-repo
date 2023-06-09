@@ -1,23 +1,40 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
-    return (
-        <div className='h-[100vh] '>
-            <section className="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
-                <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-                    <div className="max-w-md text-center">
-                        <h2 className="mb-8 font-extrabold text-9xl dark:text-gray-600">
-                            <span className="sr-only">Error</span>404
-                        </h2>
-                        <p className="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-                        <p className="mt-4 mb-8 dark:text-gray-400">But dont worry, you can find plenty of other things on our homepage.</p>
-                        <a rel="noopener noreferrer" href="#" className="px-8 py-3 font-semibold rounded dark:bg-violet-400 dark:text-gray-900">Back to homepage</a>
-                    </div>
-                </div>
-            </section>
+  return (
+    <div className="xl:h-[850px] lg:h-[700px] md:h-[550px] h-[650px] h w-full border bg-white">
+      <div className="flex  flex-col items-center justify-center  h-full   lg:space-y-4 space-y-3 px-2    ">
+        <div>
+          <img
+            className="w-52"
+            src="https://i.ibb.co/3cCHD0Y/98642-error-404.gif"
+            alt=""
+          />
         </div>
-    );
-    
+        <div className=" flex flex-col items-center justify-center uppercase ">
+          <h1 className="xl:text-4xl lg:text-2xl md:text-xl sm:text-lg text-md font-bold font-serif">
+            We are sorry, page not found
+          </h1>
+          <p className="mt-4 lg:text-lg sm:text-md text-sm font-semibold font-serif ">
+            The page you are looking for might have been removed, had its name
+            changed or its temporarily unavailable
+          </p>
+          <Link to="/">
+            <a
+              href="#_"
+              class="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all border bg-white rounded hover:bg-white group"
+            >
+              <span class="w-48 h-48 rounded rotate-[-40deg] bg-purple-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+              <span class="relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">
+                Back to homepage
+              </span>
+            </a>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ErrorPage;
